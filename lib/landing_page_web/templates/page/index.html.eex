@@ -1,6 +1,6 @@
-<div class="main-wrapper">
-  <div class="left">
-    <div class="hero">
+<div class="level">
+  <div class="level-left">
+    <div class="level-item">
       <h1 class="title">Phoenix & Elm landing page</h1>
       <p class="subtitle">
         Real use case of building a landing page using <strong>Phoenix</strong> and <strong>Elm</strong>,
@@ -13,10 +13,10 @@
       </a>
     </div>
   </div>
-  <div class="right" id="subscribe_form">
-    <section class="section">
+  <div class="level-right" id="subscribe_form">
+    <section class="level-item section">
       <div class="container is-fluid">
-        <div id="form_container"></div>
+        <div id="elm_container"></div>
       </div>
     </section>
   </div>

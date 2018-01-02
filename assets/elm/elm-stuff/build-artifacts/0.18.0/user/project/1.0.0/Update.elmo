@@ -1,0 +1,41 @@
+var _user$project$Update$update = F2(
+	function (msg, model) {
+		var formFields = _user$project$Model$extractFormFields(model.subscribeForm);
+		var subscribeForm = model.subscribeForm;
+		var _p0 = msg;
+		switch (_p0.ctor) {
+			case 'HandleFullNameInput':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{
+							subscribeForm: _user$project$Model$Editing(
+								_elm_lang$core$Native_Utils.update(
+									formFields,
+									{fullName: _p0._0}))
+						}),
+					{ctor: '[]'});
+			case 'HandleEmailInput':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{
+							subscribeForm: _user$project$Model$Editing(
+								_elm_lang$core$Native_Utils.update(
+									formFields,
+									{email: _p0._0}))
+						}),
+					{ctor: '[]'});
+			default:
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{
+							subscribeForm: _user$project$Model$Saving(formFields)
+						}),
+					{ctor: '[]'});
+		}
+	});

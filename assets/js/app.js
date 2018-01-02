@@ -11,10 +11,15 @@
 //
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
-import "phoenix_html"
-
+import 'phoenix_html'
+import Elm from './elm/main'
 // Import local files
-//
+
+const elmContainer = document.querySelector('#elm_container')
+
+if (elmContainer) {
+  const app = Elm.Main.embed(elmContainer)
+}
 // Local files can be imported directly using relative
 // paths "./socket" or full ones "web/static/js/socket".
 
