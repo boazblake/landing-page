@@ -1,6 +1,10 @@
 module Update exposing (update)
 
-import Decode exposing (decodeString)
+import Http exposing (Error(..))
+import Json.Decode as Decode
+import Decoders exposing (validationErrorsDecoder)
+
+import Commands as Commands
 import Messages exposing (Msg(..))
 import Model exposing (..)
 
@@ -22,12 +26,16 @@ update msg model =
           { model | subscribeForm = Editing { formFields | email = value }} ! []
         
         HandleFormSubmit ->
-          { model | subscribeForm = Saving formFields } ! []
-
+          let
+              newSubscribeForm =
+                Saving formFields
+          in
+            { model | subscribeForm = Saving formFields } ! [ Commands.subscribe newSubscribeForm]
+        
         SubscribeResponse (Ok result) ->
           { model | subscribeForm = Success} ! []
         
-        SubscribeResponse (Err (Err response)) ->
+        SubscribeResponse (Err (BadStatus response)) ->
           case Decode.decodeString validationErrorsDecoder response.body of
             Ok validationErrors ->
               { model | subscribeForm = Invalid formFields validationErrors} ! []
@@ -36,4 +44,4 @@ update msg model =
               { model | subscribeForm = Errored formFields "Shit, something went down - my bad."} ! []
         
         SubscribeResponse (Err error) ->
-          { model | subscribeForm = Errored FormFields "Shit, something went down - my bad."} ! []
+          { model | subscribeForm = Errored formFields "Shit, something went down - my bad."} ! []

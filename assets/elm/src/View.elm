@@ -125,7 +125,7 @@ formView subscribeForm =
                 ]
                 [ Html.span
                   []
-                  [ Html.text "subscribe Me"]
+                  [ Html.text "Subscribe"]
                 ]
               ]
             ]

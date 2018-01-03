@@ -28,7 +28,8 @@ var _user$project$Update$update = F2(
 									{email: _p0._0}))
 						}),
 					{ctor: '[]'});
-			default:
+			case 'HandleFormSubmit':
+				var newSubscribeForm = _user$project$Model$Saving(formFields);
 				return A2(
 					_elm_lang$core$Platform_Cmd_ops['!'],
 					_elm_lang$core$Native_Utils.update(
@@ -36,6 +37,51 @@ var _user$project$Update$update = F2(
 						{
 							subscribeForm: _user$project$Model$Saving(formFields)
 						}),
-					{ctor: '[]'});
+					{
+						ctor: '::',
+						_0: _user$project$Commands$subscribe(newSubscribeForm),
+						_1: {ctor: '[]'}
+					});
+			default:
+				if (_p0._0.ctor === 'Ok') {
+					return A2(
+						_elm_lang$core$Platform_Cmd_ops['!'],
+						_elm_lang$core$Native_Utils.update(
+							model,
+							{subscribeForm: _user$project$Model$Success}),
+						{ctor: '[]'});
+				} else {
+					if (_p0._0._0.ctor === 'BadStatus') {
+						var _p1 = A2(_elm_lang$core$Json_Decode$decodeString, _user$project$Decoders$validationErrorsDecoder, _p0._0._0._0.body);
+						if (_p1.ctor === 'Ok') {
+							return A2(
+								_elm_lang$core$Platform_Cmd_ops['!'],
+								_elm_lang$core$Native_Utils.update(
+									model,
+									{
+										subscribeForm: A2(_user$project$Model$Invalid, formFields, _p1._0)
+									}),
+								{ctor: '[]'});
+						} else {
+							return A2(
+								_elm_lang$core$Platform_Cmd_ops['!'],
+								_elm_lang$core$Native_Utils.update(
+									model,
+									{
+										subscribeForm: A2(_user$project$Model$Errored, formFields, 'Shit, something went down - my bad.')
+									}),
+								{ctor: '[]'});
+						}
+					} else {
+						return A2(
+							_elm_lang$core$Platform_Cmd_ops['!'],
+							_elm_lang$core$Native_Utils.update(
+								model,
+								{
+									subscribeForm: A2(_user$project$Model$Errored, formFields, 'Shit, something went down - my bad.')
+								}),
+							{ctor: '[]'});
+					}
+				}
 		}
 	});

@@ -275,7 +275,7 @@ var _user$project$View$formView = function (subscribeForm) {
 																	{ctor: '[]'},
 																	{
 																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('subscribe Me'),
+																		_0: _elm_lang$html$Html$text('Subscribe'),
 																		_1: {ctor: '[]'}
 																	}),
 																_1: {ctor: '[]'}

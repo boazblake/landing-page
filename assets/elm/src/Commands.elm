@@ -1,3 +1,5 @@
+module Commands exposing (subscribe)
+
 import Http
 import Json.Decode as JD
 import Json.Encode as JE
@@ -29,9 +31,9 @@ post formFields =
 encodeModel : FormFields -> JD.Value
 encodeModel { fullName, email } =
   JE.object
-    [ ( "Lead"
-      , JE.object
-        [ ( "full_name", JE.string fullname)
+    [ ( "lead"
+      , JE.object 
+        [ ( "full_name", JE.string fullName)
         , ( "email", JE.string email)
         ]
       )
