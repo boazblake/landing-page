@@ -13224,7 +13224,7 @@ var _user$project$View$formError = function (subscribeForm) {
 			_elm_lang$html$Html$div,
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('notfication is-danger fade-in'),
+				_0: _elm_lang$html$Html_Attributes$class('message is-danger fade-in'),
 				_1: {ctor: '[]'}
 			},
 			{
@@ -13427,7 +13427,11 @@ var _user$project$View$formView = function (subscribeForm) {
 															}
 														},
 														{ctor: '[]'}),
-													_1: {ctor: '[]'}
+													_1: {
+														ctor: '::',
+														_0: A2(_user$project$View$validationErrorView, 'email', validationErrors),
+														_1: {ctor: '[]'}
+													}
 												}),
 											_1: {ctor: '[]'}
 										}),
@@ -13510,7 +13514,7 @@ var _user$project$View$successView = A2(
 			_elm_lang$html$Html$div,
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('icon is-large'),
+				_0: _elm_lang$html$Html_Attributes$class('icon is-large is-danger'),
 				_1: {ctor: '[]'}
 			},
 			{
@@ -13556,7 +13560,8 @@ var _user$project$View$view = function (_p5) {
 	if (_p7.ctor === 'Success') {
 		return _user$project$View$successView;
 	} else {
-		return _user$project$View$formView(_p8);
+		return _user$project$View$formView(
+			A2(_elm_lang$core$Debug$log, 'SUBSCRIBE FORM', _p8));
 	}
 };
 

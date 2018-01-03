@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <title>Hello Landing Page!</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 

@@ -1,11 +1,13 @@
 <div class="level">
   <div class="level-left">
     <div class="level-item">
-      <h1 class="title">Phoenix & Elm landing page</h1>
-      <p class="subtitle">
-        Real use case of building a landing page using <strong>Phoenix</strong> and <strong>Elm</strong>,
-        following some common patterns and best practices.
-      </p>
+      <div class="hero container">
+        <h1 class="title">Phoenix & Elm landing page</h1>
+        <p class="subtitle">
+          Real use case of building a landing page using <strong>Phoenix</strong> and <strong>Elm</strong>,
+          following some common patterns and best practices.
+        </p>
+      </div>
     </div>
     <div class="scroll-to">
       <a class="icon">

@@ -16,14 +16,14 @@ view { subscribeForm } =
       successView
     
     _ ->
-      formView subscribeForm
+      formView (Debug.log("SUBSCRIBE FORM") subscribeForm)
 
 successView : Html Msg
 successView =
   Html.div 
     [ Html.class "success-message"]
     [ Html.div
-      [ Html.class "icon is-large"]
+      [ Html.class "icon is-large is-danger"]
       [ Html.i
         [ Html.class "fa fa-3 fa-heart" ]
         []
@@ -110,6 +110,7 @@ formView subscribeForm =
                   , Html.onInput HandleEmailInput
                 ]
                 []
+                , validationErrorView "email" validationErrors
               ]
             ]
           , Html.div
@@ -137,7 +138,7 @@ formError subscribeForm =
   case subscribeForm of
     Errored _ message ->
       Html.div
-        [ Html.class "notfication is-danger fade-in"]
+        [ Html.class "message is-danger fade-in"]
         [ Html.text message]
     
     _ ->
