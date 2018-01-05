@@ -27,7 +27,6 @@ config :landing_page, landing_page.Repo,
   url: System.get_env("DATABASE_URL"),
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
   ssl: true,
-  force_ssl: [rewrite_on: [:x_forwarded_proto]],
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
