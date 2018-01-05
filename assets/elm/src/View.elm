@@ -1,6 +1,5 @@
 module View exposing (view)
 
-
 import Html exposing (Html, form)
 import Html.Attributes as Html
 import Html.Events as Html
@@ -14,23 +13,19 @@ view { subscribeForm } =
   case subscribeForm of
     Success ->
       successView
-    
     _ ->
       formView (Debug.log("SUBSCRIBE FORM") subscribeForm)
 
 successView : Html Msg
 successView =
   Html.div 
-    [ Html.class "success-message"]
-    [ Html.div
-      [ Html.class "icon is-large is-danger"]
-      [ Html.i
-        [ Html.class "fa fa-3 fa-heart" ]
-        []
-      ]
+    [ Html.class "success-message", Html.name "success"]
+    [ Html.h1 
+      []
+      [ Html.text "Congrats"]
     , Html.h2
       []
-      [ Html.text "Congrats ~  you have successfully subscribed" ]
+      [ Html.text "you have successfully subscribed" ]
     , Html.p
       []
       [ Html.text "Will keep you updated with the lastest news!"]
@@ -65,7 +60,7 @@ formView subscribeForm =
       fullName == "" || email == "" || saving || invalid
   in
       Html.div
-        [ Html.class "content"]
+        [ Html.class "content", Html.id "content_form"]
         [ Html.h3
           []
           [ Html.text "Stay in Contact"]

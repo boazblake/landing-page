@@ -1,0 +1,8 @@
+var _user$project$Animation$toJs = _elm_lang$core$Native_Platform.outgoingPort(
+	'toJs',
+	function (v) {
+		return v;
+	});
+var _user$project$Animation$fromJs = _elm_lang$core$Native_Platform.incomingPort(
+	'fromJs',
+	_elm_lang$core$Json_Decode$list(_elm_lang$core$Json_Decode$string));

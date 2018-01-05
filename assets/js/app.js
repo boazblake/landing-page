@@ -20,6 +20,7 @@ const elmContainer = document.querySelector('#elm_container')
 if (elmContainer) {
   const app = Elm.Main.embed(elmContainer)
 }
+
 // Local files can be imported directly using relative
 // paths "./socket" or full ones "web/static/js/socket".
 

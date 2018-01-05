@@ -60,7 +60,11 @@ var _user$project$View$formView = function (subscribeForm) {
 		{
 			ctor: '::',
 			_0: _elm_lang$html$Html_Attributes$class('content'),
-			_1: {ctor: '[]'}
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$id('content_form'),
+				_1: {ctor: '[]'}
+			}
 		},
 		{
 			ctor: '::',
@@ -303,27 +307,20 @@ var _user$project$View$successView = A2(
 	{
 		ctor: '::',
 		_0: _elm_lang$html$Html_Attributes$class('success-message'),
-		_1: {ctor: '[]'}
+		_1: {
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$name('success'),
+			_1: {ctor: '[]'}
+		}
 	},
 	{
 		ctor: '::',
 		_0: A2(
-			_elm_lang$html$Html$div,
+			_elm_lang$html$Html$h1,
+			{ctor: '[]'},
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('icon is-large is-danger'),
-				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$i,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('fa fa-3 fa-heart'),
-						_1: {ctor: '[]'}
-					},
-					{ctor: '[]'}),
+				_0: _elm_lang$html$Html$text('Congrats'),
 				_1: {ctor: '[]'}
 			}),
 		_1: {
@@ -333,7 +330,7 @@ var _user$project$View$successView = A2(
 				{ctor: '[]'},
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html$text('Congrats ~  you have successfully subscribed'),
+					_0: _elm_lang$html$Html$text('you have successfully subscribed'),
 					_1: {ctor: '[]'}
 				}),
 			_1: {
